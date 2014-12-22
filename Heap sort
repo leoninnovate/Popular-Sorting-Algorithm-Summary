@@ -38,5 +38,5 @@ def heap_sort(nums):
     pos = end -1
     while pos > 0:
         nums[0], nums[pos] = nums[pos], nums[0]
-        sift_down(nums, 0 , pos)
+        sift_down(nums, 0, pos)
         pos -= 1
