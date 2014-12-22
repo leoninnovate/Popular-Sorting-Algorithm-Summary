@@ -1,0 +1,13 @@
+# Complexity: O(n^2) comparisons, O(n) swaps
+# Space: O(1) extra space because of in-place
+# Stable: No
+# Efficient for small data sets
+
+def selection_sort(nums):
+    # @params nums, a list
+    for curr_pos in xrange(len(nums)):
+        min_pos = curr_pos
+        for scan_pos in xrange(curr_pos+1, len(nums)):
+            if nums[scan_pos] < nums[min_pos]:
+                min_pos = scan_pos
+        nums[min_pos], nums[curr_pos] = nums[curr_pos], nums[min_pos]
