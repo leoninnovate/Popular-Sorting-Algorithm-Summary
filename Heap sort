@@ -1,0 +1,42 @@
+# Complexity: O(n·lg(n)) time
+# Space: O(1) extra space, in-place
+# Stable: No
+# Heapsort can be thought of as an improved selection sort; The improvement consists of the use of a heap data structure rather than a linear-time search to find the minimum
+
+# Method 1: Using the heapq module
+import heapq
+def heap_sort(nums):
+    heap = nums[:]
+    
+    heap.heapify(heap)
+    
+    for i in xrange(len(num)):
+        num[i] = heapq.heappop(heap)
+
+# Method 2: Without using the built-in module in python
+
+def heap_sort(nums):
+    def sift_down(nums, start, end):
+        left = 2*start + 1; right = 2*start + 2; largest = start
+        
+        if left < end and nums[left] > nums[start]:
+            largest = left
+        if right < end and nums[right] > nums[largest]:
+            largest = right
+        if largest != start:
+            nums[start], nums[largest] = nums[largest], nums[start]
+            sift_down(nums, largest, end)
+    
+    def heapify(nums, end):
+        p = end/2 - 1 
+        while p >= 0:
+            sift_down(nums, p, end)
+            p -= 1
+    
+    end = len(nums)
+    heapify(nums, end)
+    pos = end -1
+    while pos > 0:
+        nums[0], nums[pos] = nums[pos], nums[0]
+        sift_down(nums, 9 , pos)
+        pos -= 1
