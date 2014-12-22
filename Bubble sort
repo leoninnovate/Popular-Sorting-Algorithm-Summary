@@ -1,0 +1,11 @@
+# Complexity: O(n^2) comparisons and swaps
+# Space: O(1) extra space
+# Stable: Yes
+
+def bubble_sort(nums):
+    # @param nums, a list
+    for curr_pos in xrange(len(nums)-1, 0, -1):
+        for scan_pos in xrange(curr_pos):
+            if nums[scan_pos] > nums[scan_pos+1]:
+                nums[scan_pos], nums[scan_pos+1] = nums[scan_pos+1], nums[scan_pos]
+                
