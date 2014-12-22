@@ -1,0 +1,10 @@
+# Complexity: O(n^2) comparisons and swaps
+# Space: O(1) extra space because of in-place
+# Stable 
+# Only efficient for small data sets
+# more efficient than most other quadratic algorithms 
+
+def insertion_sort(nums):
+  # @param nums, a list
+  for i in xrange(1, len(nums)):
+    
