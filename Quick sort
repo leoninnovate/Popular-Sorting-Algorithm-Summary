@@ -1,0 +1,35 @@
+# Complexity: O(n^2) comparisons, but typically O(n·lg(n)) comparisons
+# Space: O(lg(n)) extra space used by the stack during the recursion
+# Stable: No
+
+def quick_sort(nums):
+    # @param nums, a list
+    def partition(nums, start, end):
+        pivot = nums[first]
+        left = start + 1; right = end
+        
+        while True:
+            while left <= right and nums[left] <= pivot:
+                left += 1
+            
+            while left <= right and nums[right] >= pivot:
+                right -=1
+            
+            if right < left:
+                break
+            
+            else:
+                nums[left], num[right] = nums[right], nums[left]
+        
+        nums[first], nums[right] = nums[right], nums[first]
+        return right
+        
+    def recursion(nums, start, end):
+        if start < end:
+            pos = partition(nums, start, end)
+            
+            recursion(nums, start, pos-1)
+            recursion(nums, pos+1, end)
+    
+    recursion(nums, 0, len(nums)-1)
+            
