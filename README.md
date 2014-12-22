@@ -3,14 +3,14 @@ Popular-Sorting-Algorithm-Summary
 
 Popular sorting algorithm decriptions with python implementation. If you have any suggestion on my descriptions or codes, welcome to comment.
 
-Insertion sort;
+Complexity O(n^2): Insertion sort;
 Selection sort;
 Bubble sort
 
-Merge sort;
+Complexity O(n·lg(n)): Merge sort;
 Quick sort;
 Heap sort
 
-Bucket sort;
+Complexity O(n): Bucket sort;
 Counting sort;
 Radix sort
